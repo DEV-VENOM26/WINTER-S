@@ -83,16 +83,19 @@
     }
 
     function addCoins() {
-        const username = document.getElementById("target-username").value;
-        const coinsToAdd = parseInt(document.getElementById("coins-amount").value);
-        const userData = JSON.parse(localStorage.getItem(username));
+    const username = document.getElementById("target-username").value.trim();
+    const coinsToAdd = parseInt(document.getElementById("coins-amount").value);
+    const userData = JSON.parse(localStorage.getItem(username));
 
-        if (userData && !isNaN(coinsToAdd)) {
-            userData.coins += coinsToAdd;
-            localStorage.setItem(username, JSON.stringify(userData));
-            alert("Coins ajoutés avec succès !");
-            location.reload();
-        } else {
+    if (userData && !isNaN(coinsToAdd)) {
+        userData.coins += coinsToAdd;
+        localStorage.setItem(username, JSON.stringify(userData));
+        alert("Coins ajoutés avec succès !");
+        location.reload();
+    } else {
+        alert("Utilisateur non trouvé ou montant invalide.");
+    }
+} else {
             alert("Utilisateur non trouvé ou montant invalide.");
         }
     }
