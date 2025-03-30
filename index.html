@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL TOCHE STORE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #ff4e00;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .spin { background-color: #008000; }
+        .logout { background-color: red; margin-top: 20px; }
+        .panel-buy input { width: 90%; padding: 8px; margin: 10px 0; }
+        .hidden { display: none; }
+
+
+
+
+
+        /* تصميم وتحسين الزر */
+#download-container a {
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    text-decoration: none; /* إزالة أي خط تحت الرابط */
+    border: none; /* إزالة الحدود */
+}
+
+#download-container a:hover {
+    background-color: #ff8c00;  /* تغيير اللون عند التمرير */
+    transform: translateY(-4px);  /* تأثير الحركة عندما يمر الماوس على الزر */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);  /* تحسين الظل عند التمرير */
+}
+
+/* تحسين التصميم العام للحاوية */
+#download-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* تحسين النصوص داخل رابط التحميل */
+#download-container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* التأثير عند ظهور الرابط */
+#download-container {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+.social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .discord { background-color: #5865F2; }
+        .whatsapp { background-color: #25D366; }
+        .instagram { background-color: #E1306C; }
+
+    </style>
+</head>
+<body>
+
+    <h1>WALCOME ROYAL TOCHE STORE 🛒</h1>
+    <div class="coins">عندك <span id="coins">0</span> نقطة</div>
+    
+    <h3>ROYAL TOCHE STORE SAMP</h3>
+    <H1>𝐒𝐎𝐎𝐍</H1>
+
+
+    
+
+
+    <h3>ROYAL TOCHE STORE DISCORD</h3>
+    <div class="container">
+        <div class="product">
+            <img src="TEST.png" alt="منتج 1">
+            <h3>BOT BROADCAST </h3>
+            <p>200 coins</p>
+            <button onclick="showBuyPanel(200, 'منتج 1')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="MAKER.png" alt="منتج 2">
+            <h3>BOT MAKER</h3>
+            <p>1500 coins</p>
+            <button onclick="showBuyPanel(1500, 'منتج 2')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="CLONER.png" alt="منتج 3">
+            <h3>BOT CLONER SERVER</h3>
+            <p>150 coins</p>
+            <button onclick="showBuyPanel(150, 'منتج 3')">🛒شراء</button>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="product">
+            <img src="SELL PROJECT.png" alt="منتج 4">
+            <h3>BOT SELL PROJECT</h3>
+            <p>300 coins</p>
+            <button onclick="showBuyPanel(300, 'منتج 4')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="SHOPS.png" alt="منتج 5">
+            <h3>BOT SHOP</h3>
+            <p>350 coins</p>
+            <button onclick="showBuyPanel(350, 'منتج 5')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="SPIN.png" alt="منتج 6">
+            <h3>BOT SPIN</h3>
+            <p>150 coins</p>
+            <button onclick="showBuyPanel(150, 'منتج 6')">🛒شراء</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="product">
+            <img src="SYSTEM.png" alt="منتج 7">
+            <h3>BOT SYSTEM</h3>
+            <p>500 coins</p>
+            <button onclick="showBuyPanel(500, 'منتج 7')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="TACHFIR.png" alt="منتج 8">
+            <h3>BOT TACHFIR</h3>
+            <p>250 coins</p>
+            <button onclick="showBuyPanel(250, 'منتج 8')">🛒شراء</button>
+        </div>
+        <div class="product">
+            <img src="TICKET.png" alt="منتج 9">
+            <h3>BOT TICKET</h3>
+            <p>300 coins</p>
+            <button onclick="showBuyPanel(300, 'منتج 9')">🛒شراء</button>
+        </div>
+    </div>
+
+    <div id="download-container" style="display:none; text-align: center; margin-top: 30px; background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); max-width: 500px; margin-left: auto; margin-right: auto; transition: all 0.3s ease-in-out;">
+        <h3 style="font-size: 22px; font-weight: bold; margin-bottom: 15px; color: #333;">تم الشراء بنجاح! الآن يمكنك تنزيل المنتج.</h3>
+        <a href="#" id="download-link" target="_blank" style="text-decoration: none; background-color: #ff6f00; color: white; padding: 15px 35px; border-radius: 8px; font-size: 18px; display: inline-block; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s ease-in-out; cursor: pointer; font-weight: bold; letter-spacing: 1px; border: none;">
+            <span style="margin-right: 12px;"><img src="image copy 5.png" width="20px"></span> تحميل المنتج الآن
+        </a>
+    </div>
+    
+    
+    
+    
+
+    <div>
+        <button class="spin" onclick="spin()">دير سبين</button>
+        <div id="spin-timer"></div>
+    </div>
+
+    <!-- Panel d'achat -->
+    <div id="buy-panel" class="panel-buy hidden">
+        <h2>معلومات الشراء</h2>
+        <input type="text" id="whatsapp" placeholder="رقم الواتساب">
+        <input type="text" id="promo-code" placeholder="كود الخصم (إدا كان عندك)">
+        <button onclick="completePurchase()">إتمام الشراء</button>
+        <button onclick="closePanel()">إغلاق</button>
+    </div>
+
+    
+
+    <button class="logout" onclick="logout()">تسجيل خروج</button>
+    <button class="admin-btn" onclick="window.location.href='admin-login.html'">لوحة التحكم</button>
+
+    <!-- Panel ديال Admin لعرض المشتريات -->
+    <div id="admin-panel" class="admin-panel" style="display:none;">
+        <h2>لوحة تحكم الأدمن</h2>
+        <table id="purchase-table">
+            <thead>
+                <tr>
+                    <th>إسم المستخدم</th>
+                    <th>المنتج المشتراة</th>
+                    <th>رقم الواتساب</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- المشتريات ديال المستخدمين غادي تظهر هنا -->
+            </tbody>
+        </table>
+        <button onclick="goBackToShop()">رجوع للمتجر</button>
+    </div>
+
+
+
+        <h2>تواصل معنا عبر</h2>
+        <div class="social-links" style="
+            text-align: center;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(0, 0, 0);">
+            <a class="discord" href="https://discord.gg/whC6QqsnFu" target="_blank"><img src="image copy 4.png" width="20px">انضم لسيرفر ديسكورد</a>
+            <a class="whatsapp" href="https://wa.me/+212775035744" target="_blank"><img src="image copy.png" width="20px">واتساب: 0775035744</a>
+            <a class="instagram" href="https://instagram.com/royal_toche_store" target="_blank"><img src="image copy 2.png" width="20px">تابعنا على إنستغرام</a>
+            <h2>CREATE BY 9R3ALO X DIABLO</h2>
+        </div>
+
+    
+
+    
+    
+
+    <script>
+        let selectedProduct = { cost: 0, name: "" };
+
+        window.onload = function() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (!loggedInUser) {
+                window.location.href = "login.html";
+            } else {
+                let userData = JSON.parse(localStorage.getItem(loggedInUser)) || { coins: 0, lastSpin: 0 };
+                document.getElementById("coins").innerText = userData.coins;
+                updateSpinTimer();
+            }
+        };
+
+        function showBuyPanel(cost, name) {
+            selectedProduct = { cost, name };
+            document.getElementById("buy-panel").classList.remove("hidden");
+        }
+
+        
+
+    function sendDiscordWebhook(user, product, whatsapp, promoCode, finalCost, downloadLink) {
+        const webhookURL = "https://discord.com/api/webhooks/1331706603128488071/iEQxQ0u_hNFxbXpnKfnXMZlgfxZ_zXFzNnhUdS2lbuKBtHwlWxBfSET3xo-Rpv51sek0";
+
+        let message = {
+            username: "9r3alo S",
+            avatar_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fstore_2697432&psig=AOvVaw1AZsIxGO2zamgGp3c_OJhd&ust=1741770927533000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDx5r_YgYwDFQAAAAAdAAAAABAI",
+            content: `🛒 **Nouvelle commande !**\n\n👤 **Client:** ${user}\n📦 **Produit:** ${product}\n📱 **WhatsApp:** ${whatsapp || "Non fourni"}\n🎟️ **Code Promo:** ${promoCode || "Aucun"}\n💰 **Prix final:** ${finalCost} نقاط\n🔗 **Téléchargement:** [Lien de téléchargement](${downloadLink || "Non fourni"}`
+        };
+
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(message)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => { throw new Error(text) });
+            }
+            console.log("✅ Webhook envoyé !");
+        })
+        .catch(error => console.error("❌ Erreur Webhook:", error));
+    }
+
+    function completePurchase() {
+    let user = localStorage.getItem("loggedInUser");
+    let whatsapp = document.getElementById('whatsapp').value.trim();
+    let promoCode = document.getElementById('promo-code').value.trim();
+    let product = selectedProduct.name;
+    let originalCost = selectedProduct.cost;
+
+    if (!user || !product) {
+        alert("❌ خطأ في عملية الشراء !");
+        return;
+    }
+
+    // ✅ الشرط: لازم يدخل رقم الواتساب
+    if (!whatsapp) {
+        alert("❌ خاصك تدخل رقم الواتساب باش تكمل الشراء !");
+        return;
+    }
+
+    // ✅ تطبيق كود الخصم (-15%) إلا كان مدخل
+    let discount = 0;
+    if (promoCode === "YSF") {  
+        discount = originalCost * 0.15; 
+    }
+
+    let finalCost = originalCost - discount;
+
+    // ✅ نقص النقاط من الحساب
+    let userData = JSON.parse(localStorage.getItem(user)) || { coins: 0 };
+    if (userData.coins < finalCost) {
+        alert("❌ معندكش نقاط كافية !");
+        return;
+    }
+
+    userData.coins -= finalCost;
+    localStorage.setItem(user, JSON.stringify(userData));
+    document.getElementById("coins").innerText = userData.coins;
+
+    // ✅ إعداد رابط التحميل
+    let downloadLink = getDownloadLinkForProduct(product);
+
+    if (!downloadLink) {
+        alert("⚠️ لا يوجد رابط تحميل متاح لهذا المنتج.");
+        return;
+    }
+    
+
+
+
+
+
+
+    // التحقق واش عندو النقاط الكافية
+    if (userData.coins < cost) {
+        alert("❌ معندكش نقاط كافية باش تشري هاد المنتج !");
+        return;
+    }
+
+    // نقص النقاط ديال المستخدم
+    userData.coins -= cost;
+    localStorage.setItem(user, JSON.stringify(userData));
+
+    // تحديث عرض النقاط في الواجهة
+    document.getElementById("coins").innerText = userData.coins;
+
+
+    // ✅ تخزين المعلومات
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders.push({ user, product, whatsapp, promoCode, finalCost, downloadLink });
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    // ✅ إرسال إلى Discord Webhook
+    sendDiscordWebhook(user, product, whatsapp, promoCode, finalCost, downloadLink);
+
+    alert(`✅ تم الشراء بنجاح! تم خصم ${finalCost} نقطة.`);
+
+    // ✅ عرض رابط التحميل
+    showDownloadLink(downloadLink);
+
+    closePanel();
+}
+
+function getDownloadLinkForProduct(product) {
+    const productLinks = {
+        "منتج 1": "https://www.mediafire.com/file/l4mwg7821wupjsm/Broadcast_Project.zip/file",
+        "منتج 2": "https://www.mediafire.com/file/m9rytlxinbgn56p/archive-2024-08-13T005500%252B0200.tar.gz.tar/file",
+        "منتج 3": "https://www.mediafire.com/file/68g97g9u0lqcj7v/Copy_Server.zip/file",
+        "منتج 4": "https://www.mediafire.com/file/rhezmmcxgivwvpr/Buy_Projects.zip/file",
+        "منتج 5": "https://www.mediafire.com/file/ds6podwilwyget6/Shop_v1.zip/file",
+        "منتج 6": "https://www.mediafire.com/file/l19a7ddgec5xe4k/spin.zip/file",
+        "منتج 7": "https://www.mediafire.com/file/lwcy6hgi1cowdwl/%D8%A8%D9%88%D8%AA_%D8%A7%D9%84%D9%83%D9%84_%D9%81%D9%8A_%D9%88%D8%A7%D8%AD%D8%AF_%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB_%D8%A7%D9%84%D8%A7%D8%AE%D9%8A%D8%B1.rar/file",
+        "منتج 8": "https://www.mediafire.com/file/qlmq8p7cd9lgsey/Tachfir.zip/file",
+        "منتج 9": "https://www.mediafire.com/file/ul81rf1nckbv68s/ticket_v2.zip/file"
+    };
+
+    return productLinks[product] || null; // رجع `null` إلا ما كانش رابط
+}
+
+
+
+
+
+function showDownloadLink(link) {
+    const downloadContainer = document.getElementById("download-container");
+    const downloadLink = document.getElementById("download-link");
+
+    if (!link || link === "رابط التحميل غير متوفر") {
+        alert("⚠️ عذرًا، لا يوجد رابط تحميل متاح لهذا المنتج.");
+        return;
+    }
+
+    downloadLink.href = link;
+    downloadLink.style.display = "inline-block"; // تأكيد ظهور الرابط
+    downloadContainer.style.display = "block"; // إظهار الحاوية
+
+    // ✅ عرض رسالة نجاح مع الرابط
+    downloadContainer.innerHTML = `
+        <h3>✅ تم الشراء بنجاح!</h3>
+        <p>يمكنك الآن تنزيل المنتج عبر الرابط أدناه:</p>
+        <a href="${link}" target="_blank"  style="background-color: #ff6f00; color: white; padding: 15px 35px; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none;">
+            📥 تحميل المنتج
+        </a>
+    `;
+}
+
+
+
+
+
+
+
+        function closePanel() {
+            document.getElementById("buy-panel").classList.add("hidden");
+        }
+
+        function spin() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            let userData = JSON.parse(localStorage.getItem(loggedInUser)) || { coins: 0, lastSpin: 0 };
+            let now = Date.now();
+
+            if (now - userData.lastSpin < 48 * 60 * 60 * 1000) {
+                alert("يجب الانتظار 24 ساعة قبل إعادة السبين !");
+                return;
+            }
+
+            let pointsWon = [30, 26, 29, 34, 15, 20][Math.floor(Math.random() * 6)];
+            userData.coins += pointsWon;
+            userData.lastSpin = now;
+            localStorage.setItem(loggedInUser, JSON.stringify(userData));
+            document.getElementById("coins").innerText = userData.coins;
+            updateSpinTimer();
+
+            alert(`لقد ربحت ${pointsWon} نقطة 🎉`);
+        }
+
+        function updateSpinTimer() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            let userData = JSON.parse(localStorage.getItem(loggedInUser)) || { lastSpin: 0 };
+            let now = Date.now();
+            let remainingTime = 48 * 60 * 60 * 1000 - (now - userData.lastSpin);
+
+            if (remainingTime > 0) {
+                let hours = Math.floor(remainingTime / (1000 * 60 * 60));
+                let minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("spin-timer").innerText = `⏳ السبين سيكون متاح بعد ${hours} ساعة و ${minutes} دقيقة`;
+            } else {
+                document.getElementById("spin-timer").innerText = "✅ السبين متاح الآن !";
+            }
+        }
+
+        function adminLogin() {
+            window.location.href = "admin-login.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "login.html";
+        }
+
+        function goBackToShop() {
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('buy-panel').style.display = 'none';
+        }
+
+
+
+
+        // server.js - Côté serveur (site web)
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+let products = [];  // Une liste des produits sur ton site
+let coinsPrice = 700000;  // Prix de 1 coin en crédits
+
+// API pour obtenir le prix des coins
+app.get('/api/coins-price', (req, res) => {
+    res.json({ price: coinsPrice });
+});
+
+// API pour acheter des coins
+app.post('/api/buy-coins', (req, res) => {
+    const { amount } = req.body;
+    const totalCost = amount * coinsPrice;
+    res.json({ totalCost: totalCost, message: `Achat de ${amount} coins pour ${totalCost} crédits.` });
+});
+
+// API pour ajouter un produit
+app.post('/api/add-product', (req, res) => {
+    const { name, price, imageUrl, downloadLink } = req.body;
+    products.push({ name, price, imageUrl, downloadLink });
+    res.json({ message: 'Produit ajouté avec succès.', product: { name, price, imageUrl, downloadLink } });
+});
+
+// Lancer le serveur
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+    </script>
+    <div id="download-container" style="display:none; text-align: center; margin-top: 30px; background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); max-width: 500px; margin-left: auto; margin-right: auto; transition: all 0.3s ease-in-out;">
+        <h3>✅ تم الشراء بنجاح!</h3>
+        <p>يمكنك الآن تنزيل المنتج عبر الرابط أدناه:</p>
+        <a id="download-link" href="#" target="_blank" ><img src="image copy 5.png" width="20px" style="background-color: #ff6f00; color: white; padding: 15px 35px; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none;">
+             تحميل المنتج
+        </a>
+    </div>
+    
+    <script>
+    function completePurchase() {
+        let user = localStorage.getItem("loggedInUser");
+        let whatsapp = document.getElementById('whatsapp').value.trim();
+        let promoCode = document.getElementById('promo-code').value.trim();
+        let product = selectedProduct.name;
+        let originalCost = selectedProduct.cost;
+    
+        if (!user || !product) {
+            alert("❌ خطأ في عملية الشراء !");
+            return;
+        }
+    
+        if (!whatsapp) {
+            alert("❌ خاصك تدخل رقم الواتساب باش تكمل الشراء !");
+            return;
+        }
+    
+        let discount = 0;
+        if (promoCode === "YSF") {  
+            discount = originalCost * 0.15; 
+        }
+    
+        let finalCost = originalCost - discount;
+    
+        let userData = JSON.parse(localStorage.getItem(user)) || { coins: 0 };
+        if (userData.coins < finalCost) {
+            alert("❌ معندكش نقاط كافية !");
+            return;
+        }
+    
+        userData.coins -= finalCost;
+        localStorage.setItem(user, JSON.stringify(userData));
+        document.getElementById("coins").innerText = userData.coins;
+    
+        let downloadLink = getDownloadLinkForProduct(product);
+    
+        if (!downloadLink) {
+            alert("⚠️ لا يوجد رابط تحميل متاح لهذا المنتج.");
+            return;
+        }
+    
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push({ user, product, whatsapp, promoCode, finalCost, downloadLink });
+        localStorage.setItem("orders", JSON.stringify(orders));
+    
+        sendDiscordWebhook(user, product, whatsapp, promoCode, finalCost, downloadLink);
+    
+        alert(`✅ تم الشراء بنجاح! تم خصم ${finalCost} نقطة.`);
+    
+        showDownloadLink(downloadLink);
+        closePanel();
+    }
+    
+    function getDownloadLinkForProduct(product) {
+        const productLinks = {
+        "منتج 1": "https://www.mediafire.com/file/l4mwg7821wupjsm/Broadcast_Project.zip/file",
+        "منتج 2": "https://www.mediafire.com/file/m9rytlxinbgn56p/archive-2024-08-13T005500%252B0200.tar.gz.tar/file",
+        "منتج 3": "https://www.mediafire.com/file/68g97g9u0lqcj7v/Copy_Server.zip/file",
+        "منتج 4": "https://www.mediafire.com/file/rhezmmcxgivwvpr/Buy_Projects.zip/file",
+        "منتج 5": "https://www.mediafire.com/file/ds6podwilwyget6/Shop_v1.zip/file",
+        "منتج 6": "https://www.mediafire.com/file/l19a7ddgec5xe4k/spin.zip/file",
+        "منتج 7": "https://www.mediafire.com/file/lwcy6hgi1cowdwl/%D8%A8%D9%88%D8%AA_%D8%A7%D9%84%D9%83%D9%84_%D9%81%D9%8A_%D9%88%D8%A7%D8%AD%D8%AF_%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB_%D8%A7%D9%84%D8%A7%D8%AE%D9%8A%D8%B1.rar/file",
+        "منتج 8": "https://www.mediafire.com/file/qlmq8p7cd9lgsey/Tachfir.zip/file",
+        "منتج 9": "https://www.mediafire.com/file/ul81rf1nckbv68s/ticket_v2.zip/file"
+        };
+    
+        return productLinks[product] || null;
+    }
+    
+    function showDownloadLink(link) {
+        const downloadContainer = document.getElementById("download-container");
+        const downloadLink = document.getElementById("download-link");
+    
+        if (!link) {
+            alert("⚠️ لا يوجد رابط تحميل متاح لهذا المنتج.");
+            return;
+        }
+    
+        downloadLink.href = link;
+        downloadContainer.style.display = "block";
+    }
+    </script> 
+</body>
+</html>

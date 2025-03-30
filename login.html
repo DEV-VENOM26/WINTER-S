@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff4e00, #ff7200);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #ff4e00;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #ff4e00;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff4e00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #e64a19;
+        }
+        .error-message {
+            color: red;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="login-container">
+        <h2>Se connecter</h2>
+        <input type="text" id="username" class="input-field" placeholder="Nom d'utilisateur" required>
+        <input type="password" id="password" class="input-field" placeholder="Mot de passe" required>
+        <button class="btn" id="login-btn">Se connecter</button>
+        <p class="error-message" id="error-message">Nom d'utilisateur ou mot de passe incorrect.</p>
+        <p style="text-align: center;">Vous n'avez pas de compte ? <a href="signup.html">S'inscrire</a></p>
+    </div>
+
+    <script>
+        document.getElementById("login-btn").onclick = function() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const userData = JSON.parse(localStorage.getItem(username));  // Récupérer les données de l'utilisateur
+
+            if (userData && userData.password === password) {
+                localStorage.setItem("loggedInUser", username);  // Enregistrer l'utilisateur connecté
+                window.location.href = "index.html";  // Rediriger vers la boutique
+            } else {
+                document.getElementById("error-message").style.display = "block";  // Afficher un message d'erreur
+            }
+        };
+    </script>
+
+</body>
+</html>
